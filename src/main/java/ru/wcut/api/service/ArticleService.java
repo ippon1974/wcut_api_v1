@@ -1,0 +1,28 @@
+package ru.wcut.api.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import ru.wcut.api.entity.ArticleEntity;
+import ru.wcut.api.exception.ArticleNotFoundException;
+import ru.wcut.api.model.Article;
+import ru.wcut.api.repository.ArticleRepo;
+
+import java.util.List;
+
+@Service
+public class ArticleService {
+    @Autowired
+    private ArticleRepo articleRepo;
+
+    public List<ArticleEntity> findAllElements() {
+        return articleRepo.findAll();
+    }
+    public Article getOne(Long id) throws ArticleNotFoundException {
+        ArticleEntity article = articleRepo.findById(id).get();
+        if(article == null) {
+            throw new ArticleNotFoundException("Пользователь с таким именем не нейден");
+        }
+        return Article.toModel(article);
+    }
+
+}
