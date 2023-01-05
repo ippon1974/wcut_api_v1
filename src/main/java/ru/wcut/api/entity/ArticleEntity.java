@@ -11,7 +11,10 @@ public class ArticleEntity {
     private long id;
     private String title;
     private String  titlelong;
+
+    @Column(columnDefinition = "TEXT")
     private String body;
+    @Column(length = 55)
     private String img;
     private String iframe;
     private String video;

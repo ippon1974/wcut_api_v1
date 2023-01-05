@@ -10,7 +10,7 @@ import ru.wcut.api.service.ArticleService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:30000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/news")
 public class ArticleController {

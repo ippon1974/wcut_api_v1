@@ -17,6 +17,8 @@ public class ArticleService {
     public List<ArticleEntity> findAllElements() {
         return articleRepo.findAll();
     }
+
+
     public Article getOne(Long id) throws ArticleNotFoundException {
         ArticleEntity article = articleRepo.findById(id).get();
         if(article == null) {
