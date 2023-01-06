@@ -10,19 +10,20 @@ public class ArticleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
+    private int title_id;
     private String  titlelong;
-
     @Column(columnDefinition = "TEXT")
     private String body;
     @Column(length = 55)
-    private String img;
+    private String img_1;
+    private String img_2;
+    private String img_3;
     private String iframe;
     private String video;
     private int last_id;
     private Date dt;
     private Date dt_published;
     private Boolean is_published;
-
 
     public ArticleEntity() {
     }
@@ -43,6 +44,14 @@ public class ArticleEntity {
         this.title = title;
     }
 
+    public int getTitle_id() {
+        return title_id;
+    }
+
+    public void setTitle_id(int title_id) {
+        this.title_id = title_id;
+    }
+
     public String getTitlelong() {
         return titlelong;
     }
@@ -59,12 +68,28 @@ public class ArticleEntity {
         this.body = body;
     }
 
-    public String getImg() {
-        return img;
+    public String getImg_1() {
+        return img_1;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImg_1(String img_1) {
+        this.img_1 = img_1;
+    }
+
+    public String getImg_2() {
+        return img_2;
+    }
+
+    public void setImg_2(String img_2) {
+        this.img_2 = img_2;
+    }
+
+    public String getImg_3() {
+        return img_3;
+    }
+
+    public void setImg_3(String img_3) {
+        this.img_3 = img_3;
     }
 
     public String getIframe() {
