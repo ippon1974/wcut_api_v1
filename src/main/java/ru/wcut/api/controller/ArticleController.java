@@ -27,6 +27,36 @@ public class ArticleController {
         return articleService.findAllElements();
     }
 
+    @GetMapping("/market")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getAllMarketNews(){
+        return articleService.findAllMarketNews();
+    }
+
+    @GetMapping("/company")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getAllCompanyNews(){
+        return articleService.findAllCompany();
+    }
+
+    @GetMapping("/show")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getAllShow(){
+        return articleService.findAllShow();
+    }
+
+    @GetMapping("/item")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getAllItem(){
+        return articleService.findAlIItem();
+    }
+
+    @GetMapping("/video")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getAllVideo(){
+        return articleService.findAlIVideo();
+    }
+
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getOneUser(@RequestParam long id){

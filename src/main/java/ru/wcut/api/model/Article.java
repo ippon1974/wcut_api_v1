@@ -6,12 +6,12 @@ import java.util.Date;
 
 public class Article {
     private long id;
+    private int title_id;
     private String title;
     private String  titlelong;
     private String body;
     private Date dt;
     private Date dt_published;
-    private Boolean is_published;
 
     public Article() {
     }
@@ -22,6 +22,14 @@ public class Article {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getTitle_id() {
+        return title_id;
+    }
+
+    public void setTitle_id(int title_id) {
+        this.title_id = title_id;
     }
 
     public String getTitle() {
@@ -64,23 +72,15 @@ public class Article {
         this.dt_published = dt_published;
     }
 
-    public Boolean getIs_published() {
-        return is_published;
-    }
-
-    public void setIs_published(Boolean is_published) {
-        this.is_published = is_published;
-    }
-
     public static Article toModel(ArticleEntity articleEntity) {
         Article model = new Article();
         model.setId(articleEntity.getId());
+        model.setTitle_id(articleEntity.getTitle_id());
         model.setTitle(articleEntity.getTitle());
         model.setTitlelong(articleEntity.getTitlelong());
         model.setBody(articleEntity.getBody());
         model.setDt(articleEntity.getDt());
         model.setDt_published(articleEntity.getDt_published());
-        model.setIs_published(articleEntity.getIs_published());
         return model;
     }
 }

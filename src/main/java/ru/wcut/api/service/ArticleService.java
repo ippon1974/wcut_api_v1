@@ -15,9 +15,27 @@ public class ArticleService {
     private ArticleRepo articleRepo;
 
     public List<ArticleEntity> findAllElements() {
-        return articleRepo.findAll();
+        return articleRepo.findAllByOrderByIdDesc();
+    }
+    public List<ArticleEntity> findAllMarketNews(){
+        return articleRepo.findAllMarket();
     }
 
+    public List<ArticleEntity> findAllCompany(){
+        return articleRepo.findAllCompany();
+    }
+
+    public List<ArticleEntity> findAllShow(){
+        return articleRepo.findAllShow();
+    }
+
+    public List<ArticleEntity> findAlIItem(){
+        return articleRepo.findAllItem();
+    }
+
+    public List<ArticleEntity> findAlIVideo(){
+        return articleRepo.findAllVideo();
+    }
 
     public Article getOne(Long id) throws ArticleNotFoundException {
         ArticleEntity article = articleRepo.findById(id).get();
