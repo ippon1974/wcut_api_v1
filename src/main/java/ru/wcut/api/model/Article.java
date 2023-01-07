@@ -10,6 +10,11 @@ public class Article {
     private String title;
     private String  titlelong;
     private String body;
+    private String img_1;
+    private String img_2;
+    private String img_3;
+    private String iframe;
+    private String video;
     private Date dt;
     private Date dt_published;
 
@@ -56,6 +61,46 @@ public class Article {
         this.body = body;
     }
 
+    public String getImg_1() {
+        return img_1;
+    }
+
+    public void setImg_1(String img_1) {
+        this.img_1 = img_1;
+    }
+
+    public String getImg_2() {
+        return img_2;
+    }
+
+    public void setImg_2(String img_2) {
+        this.img_2 = img_2;
+    }
+
+    public String getImg_3() {
+        return img_3;
+    }
+
+    public void setImg_3(String img_3) {
+        this.img_3 = img_3;
+    }
+
+    public String getIframe() {
+        return iframe;
+    }
+
+    public void setIframe(String iframe) {
+        this.iframe = iframe;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
     public Date getDt() {
         return dt;
     }
@@ -79,6 +124,11 @@ public class Article {
         model.setTitle(articleEntity.getTitle());
         model.setTitlelong(articleEntity.getTitlelong());
         model.setBody(articleEntity.getBody());
+        model.setImg_1(articleEntity.getImg_1());
+        model.setImg_2(articleEntity.getImg_2());
+        model.setImg_3(articleEntity.getImg_3());
+        model.setIframe(articleEntity.getIframe());
+        model.setVideo(articleEntity.getVideo());
         model.setDt(articleEntity.getDt());
         model.setDt_published(articleEntity.getDt_published());
         return model;
