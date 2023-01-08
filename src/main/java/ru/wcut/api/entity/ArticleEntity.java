@@ -14,11 +14,14 @@ public class ArticleEntity {
     private String  titlelong;
     @Column(columnDefinition = "TEXT")
     private String body;
-    @Column(length = 55)
+    @Column(length = 15)
     private String img_1;
+    @Column(length = 15)
     private String img_2;
+    @Column(length = 15)
     private String img_3;
     private String iframe;
+    @Column(length = 5)
     private String video;
     private int last_id;
     private Date dt;
