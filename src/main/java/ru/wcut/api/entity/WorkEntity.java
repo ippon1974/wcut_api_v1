@@ -1,38 +1,56 @@
 package ru.wcut.api.entity;
 
-import java.util.Date;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "article")
-public class ArticleEntity {
+@Table(name = "work")
+public class WorkEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(length = 155)
     private String title;
 
-    @Column( nullable = true )
-    private int title_id;
-    private String  titlelong;
+    @Column(length = 275)
+    private String titlelong;
+
+    @Column(length = 75)
+    private String materialname;
+
     @Column(columnDefinition = "TEXT")
     private String body;
+
     @Column(length = 15)
     private String img_1;
+
     @Column(length = 15)
     private String img_2;
+
     @Column(length = 15)
     private String img_3;
-    private String iframe;
+
+    @Column(length = 15)
+    private String img_4;
+
+    @Column(length = 15)
+    private String img_5;
+
     @Column(length = 5)
     private String video;
 
     @Column( nullable = true )
     private int last_id;
+
     private Date dt;
+
     private Date dt_published;
+
     private Boolean is_published;
 
-    public ArticleEntity() {
+    public WorkEntity() {
     }
 
     public long getId() {
@@ -51,20 +69,20 @@ public class ArticleEntity {
         this.title = title;
     }
 
-    public int getTitle_id() {
-        return title_id;
-    }
-
-    public void setTitle_id(int title_id) {
-        this.title_id = title_id;
-    }
-
     public String getTitlelong() {
         return titlelong;
     }
 
     public void setTitlelong(String titlelong) {
         this.titlelong = titlelong;
+    }
+
+    public String getMaterialname() {
+        return materialname;
+    }
+
+    public void setMaterialname(String materialname) {
+        this.materialname = materialname;
     }
 
     public String getBody() {
@@ -99,12 +117,20 @@ public class ArticleEntity {
         this.img_3 = img_3;
     }
 
-    public String getIframe() {
-        return iframe;
+    public String getImg_4() {
+        return img_4;
     }
 
-    public void setIframe(String iframe) {
-        this.iframe = iframe;
+    public void setImg_4(String img_4) {
+        this.img_4 = img_4;
+    }
+
+    public String getImg_5() {
+        return img_5;
+    }
+
+    public void setImg_5(String img_5) {
+        this.img_5 = img_5;
     }
 
     public String getVideo() {

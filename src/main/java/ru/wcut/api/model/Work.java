@@ -1,38 +1,28 @@
-package ru.wcut.api.entity;
+package ru.wcut.api.model;
 
+import ru.wcut.api.entity.ArticleEntity;
+import ru.wcut.api.entity.WorkEntity;
+
+import javax.persistence.Column;
 import java.util.Date;
-import javax.persistence.*;
 
-@Entity
-@Table(name = "article")
-public class ArticleEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Work {
     private long id;
     private String title;
-
-    @Column( nullable = true )
-    private int title_id;
-    private String  titlelong;
-    @Column(columnDefinition = "TEXT")
+    private String titlelong;
+    private String materialname;
     private String body;
-    @Column(length = 15)
     private String img_1;
-    @Column(length = 15)
     private String img_2;
-    @Column(length = 15)
     private String img_3;
-    private String iframe;
-    @Column(length = 5)
+    private String img_4;
+    private String img_5;
     private String video;
-
-    @Column( nullable = true )
     private int last_id;
     private Date dt;
     private Date dt_published;
-    private Boolean is_published;
 
-    public ArticleEntity() {
+    public Work() {
     }
 
     public long getId() {
@@ -51,20 +41,20 @@ public class ArticleEntity {
         this.title = title;
     }
 
-    public int getTitle_id() {
-        return title_id;
-    }
-
-    public void setTitle_id(int title_id) {
-        this.title_id = title_id;
-    }
-
     public String getTitlelong() {
         return titlelong;
     }
 
     public void setTitlelong(String titlelong) {
         this.titlelong = titlelong;
+    }
+
+    public String getMaterialname() {
+        return materialname;
+    }
+
+    public void setMaterialname(String materialname) {
+        this.materialname = materialname;
     }
 
     public String getBody() {
@@ -99,12 +89,20 @@ public class ArticleEntity {
         this.img_3 = img_3;
     }
 
-    public String getIframe() {
-        return iframe;
+    public String getImg_4() {
+        return img_4;
     }
 
-    public void setIframe(String iframe) {
-        this.iframe = iframe;
+    public void setImg_4(String img_4) {
+        this.img_4 = img_4;
+    }
+
+    public String getImg_5() {
+        return img_5;
+    }
+
+    public void setImg_5(String img_5) {
+        this.img_5 = img_5;
     }
 
     public String getVideo() {
@@ -139,11 +137,22 @@ public class ArticleEntity {
         this.dt_published = dt_published;
     }
 
-    public Boolean getIs_published() {
-        return is_published;
-    }
-
-    public void setIs_published(Boolean is_published) {
-        this.is_published = is_published;
+    public static Work toModel(WorkEntity workEntity) {
+        Work model = new Work();
+        model.setId(workEntity.getId());
+        model.setTitle(workEntity.getTitle());
+        model.setTitlelong(workEntity.getTitlelong());
+        model.setMaterialname(workEntity.getMaterialname());
+        model.setBody(workEntity.getBody());
+        model.setImg_1(workEntity.getImg_1());
+        model.setImg_2(workEntity.getImg_2());
+        model.setImg_3(workEntity.getImg_3());
+        model.setImg_4(workEntity.getImg_4());
+        model.setImg_5(workEntity.getImg_5());
+        model.setVideo(workEntity.getVideo());
+        model.setDt(workEntity.getDt());
+        model.setDt_published(workEntity.getDt_published());
+        return model;
     }
 }
+

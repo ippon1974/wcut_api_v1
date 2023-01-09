@@ -17,6 +17,7 @@ public class ArticleService {
     public List<ArticleEntity> findAllElements() {
         return articleRepo.findAllByOrderByIdDesc();
     }
+
     public List<ArticleEntity> findAllMarketNews(){
         return articleRepo.findAllMarket();
     }
