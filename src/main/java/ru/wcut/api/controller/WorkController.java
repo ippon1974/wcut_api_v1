@@ -27,6 +27,19 @@ public class WorkController {
         return workService.findAllElements();
     }
 
+//    @GetMapping(value = {"prev/"})
+    @GetMapping("/prev")
+    @ResponseStatus(HttpStatus.OK)
+    public List<WorkEntity> pagePrev(@RequestParam Long id){
+        return workService.prevPage(id);
+    }
+
+    @GetMapping(value = {"next/{id}"})
+    @ResponseStatus(HttpStatus.OK)
+    public List<WorkEntity> pageNext(@PathVariable Long id){
+        return workService.nextPage(id);
+    }
+
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getOneUser(@RequestParam long id){
