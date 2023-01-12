@@ -7,7 +7,7 @@ import ru.wcut.api.entity.WorkEntity;
 import java.util.List;
 
 public interface WorkRepo extends JpaRepository<WorkEntity, Long> {
-    @Query(value = "SELECT * FROM work WHERE is_published = '1'", nativeQuery = true)
+    @Query(value = "SELECT * FROM work WHERE is_published = '1' ORDER BY id DESC", nativeQuery = true)
     public List<WorkEntity> findAllByOrderByIdDesc();
 
     @Query(value = "SELECT * FROM work WHERE id < ? AND  is_published = '1' ORDER BY id DESC LIMIT 1", nativeQuery = true)
