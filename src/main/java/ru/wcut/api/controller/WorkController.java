@@ -34,10 +34,29 @@ public class WorkController {
         return workService.prevPage(id);
     }
 
-    @GetMapping(value = {"next/{id}"})
+    @GetMapping(value = {"/next"})
     @ResponseStatus(HttpStatus.OK)
-    public List<WorkEntity> pageNext(@PathVariable Long id){
+    public List<WorkEntity> pageNext(@RequestParam Long id){
         return workService.nextPage(id);
+    }
+
+
+//    @GetMapping(value = {"next/{id}"})
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<WorkEntity> pageNext(@PathVariable Long id){
+//        return workService.nextPage(id);
+//    }
+
+    @GetMapping(value = {"/max"})
+    @ResponseStatus(HttpStatus.OK)
+    public int getMaxId(){
+        return workService.getMaxId();
+    }
+
+    @GetMapping(value = {"/min"})
+    @ResponseStatus(HttpStatus.OK)
+    public int getMinId(){
+        return workService.getMinId();
     }
 
     @GetMapping()

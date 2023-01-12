@@ -15,4 +15,11 @@ public interface WorkRepo extends JpaRepository<WorkEntity, Long> {
 
     @Query(value = "SELECT * FROM work WHERE id > ? AND  is_published = '1' ORDER BY id ASC LIMIT 1", nativeQuery = true)
     List<WorkEntity> findNextPagesAll(Long id);
+
+    @Query(value = "SELECT MAX(id) FROM work", nativeQuery = true)
+    int getMaxTransactionId();
+
+    @Query(value = "SELECT MIN(id) FROM work", nativeQuery = true)
+    int getMinTransactionId();
+
 }

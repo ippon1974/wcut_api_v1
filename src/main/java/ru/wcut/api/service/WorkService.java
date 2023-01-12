@@ -27,6 +27,15 @@ public class WorkService {
         return workRepo.findNextPagesAll(id);
     }
 
+    public int getMaxId(){
+        return workRepo.getMaxTransactionId();
+    }
+
+    public int getMinId(){
+        return workRepo.getMinTransactionId();
+    }
+
+
     public Work getOne(Long id) throws WorkNotFoundException {
         WorkEntity work = workRepo.findById(id).get();
         if(work == null) {
