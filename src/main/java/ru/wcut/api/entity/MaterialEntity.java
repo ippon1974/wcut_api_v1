@@ -10,6 +10,8 @@ public class MaterialEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String material;
+    private String material_en;
+    private String translit;
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mateiral")
 //    private List<CostSizeEntity> costSizeEntities;
@@ -33,5 +35,19 @@ public class MaterialEntity {
         this.material = material;
     }
 
+    public String getMaterial_en() {
+        return material_en;
+    }
 
+    public void setMaterial_en(String material_en) {
+        this.material_en = material_en;
+    }
+
+    public String getTranslit() {
+        return translit;
+    }
+
+    public void setTranslit(String translit) {
+        this.translit = translit;
+    }
 }
