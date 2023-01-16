@@ -15,8 +15,8 @@ public interface MaterialRepo extends JpaRepository<MaterialEntity, Long> {
     @Query(value = "SELECT * FROM mateiral", nativeQuery = true)
     List<MaterialEntity> mymymy();
 
-
-
+    @Query("select m from MaterialEntity m")
+    List<MaterialEntity> nnnnnn();
 
 
 }

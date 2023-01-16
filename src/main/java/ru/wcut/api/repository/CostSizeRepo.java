@@ -1,8 +1,15 @@
 package ru.wcut.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.wcut.api.entity.MaterialEntity;
+import org.springframework.data.jpa.repository.Query;
+import ru.wcut.api.entity.CostSizeEntity;
 
-public interface CostSizeRepo extends JpaRepository<MaterialEntity, Long> {
+import java.util.List;
+
+public interface CostSizeRepo extends JpaRepository<CostSizeEntity, Long> {
+
+    @Query("select m from CostSizeEntity m")
+    List<CostSizeEntity> getAllCostSize();
+
 
 }

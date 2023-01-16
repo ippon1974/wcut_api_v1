@@ -11,8 +11,8 @@ public class MaterialEntity {
     private long id;
     private String material;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mateiral")
-    private List<CostSizeEntity> costSizeEntities;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mateiral")
+//    private List<CostSizeEntity> costSizeEntities;
 
     public MaterialEntity() {
     }
@@ -33,11 +33,5 @@ public class MaterialEntity {
         this.material = material;
     }
 
-    public List<CostSizeEntity> getCostSizeEntities() {
-        return costSizeEntities;
-    }
 
-    public void setCostSizeEntities(List<CostSizeEntity> costSizeEntities) {
-        this.costSizeEntities = costSizeEntities;
-    }
 }

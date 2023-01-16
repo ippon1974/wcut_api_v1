@@ -9,13 +9,18 @@ public class CostSizeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private int material_id;
 
+    @Column(length = 5)
     private String size;
-    private BigDecimal cost;
 
-    @ManyToOne
-    @JoinColumn(name = "mateiral_id")
-    private MaterialEntity mateiral;
+    private BigDecimal cost;
+    private int is_published;
+
+
+//    @ManyToOne
+//    @JoinColumn(name = "mateiral_id")
+//    private MaterialEntity mateiral;
 
     public CostSizeEntity() {
     }
@@ -26,6 +31,14 @@ public class CostSizeEntity {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getMaterial_id() {
+        return material_id;
+    }
+
+    public void setMaterial_id(int material_id) {
+        this.material_id = material_id;
     }
 
     public String getSize() {
@@ -44,11 +57,11 @@ public class CostSizeEntity {
         this.cost = cost;
     }
 
-    public MaterialEntity getMateiral() {
-        return mateiral;
+    public int getIs_published() {
+        return is_published;
     }
 
-    public void setMateiral(MaterialEntity mateiral) {
-        this.mateiral = mateiral;
+    public void setIs_published(int is_published) {
+        this.is_published = is_published;
     }
 }

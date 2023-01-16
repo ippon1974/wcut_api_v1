@@ -13,7 +13,7 @@ public class MaterialService {
     private MaterialRepo materialRepo;
 
     public List<MaterialEntity> findAllElements() {
-        return materialRepo.mymymy();
+        return materialRepo.nnnnnn();
     }
 
 
