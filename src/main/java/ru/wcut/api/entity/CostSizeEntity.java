@@ -10,13 +10,9 @@ public class CostSizeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int material_id;
-
-    @Column(length = 5)
-    private String size;
-
+    private int size;
     private BigDecimal cost;
     private int is_published;
-
 
 //    @ManyToOne
 //    @JoinColumn(name = "mateiral_id")
@@ -41,11 +37,11 @@ public class CostSizeEntity {
         this.material_id = material_id;
     }
 
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
