@@ -26,4 +26,15 @@ public class CostSizeController {
     public List<CostSizeEntity> getAll(){
         return costSizeService.findAllElements();
     }
+
+    @GetMapping(value = {""})
+    @ResponseStatus(HttpStatus.OK)
+    public CostSizeEntity getCostSize(@RequestParam(required = false) Long id, @RequestParam(required = false) int size){
+        return costSizeService.getCostSize(id, size);
+    }
+
+
+
+
+
 }

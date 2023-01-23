@@ -9,9 +9,12 @@ import java.util.List;
 public interface CostSizeRepo extends JpaRepository<CostSizeEntity, Long> {
 
 //    @Query("select m from CostSizeEntity m order by m.id asc, m.size desc")
+//    SELECT p FROM Person p ORDER BY p.firstName ASC, p.lastName DESC
     @Query("select m from CostSizeEntity m where m.is_published = 1 order by m.size asc")
     List<CostSizeEntity> getAllCostSize();
 
-    //SELECT p FROM Person p ORDER BY p.firstName ASC, p.lastName DESC
+//    @Query("select c from CostSizeEntity c where c.material_id = :id and c.size = :size")
+    @Query(value = "SELECT * FROM costsize WHERE costsize.material_id = ? AND costsize.size = ? LIMIT 1;", nativeQuery = true)
+    CostSizeEntity findByCostBySize(Long id, int size);
 
 }

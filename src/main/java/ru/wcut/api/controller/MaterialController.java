@@ -2,9 +2,11 @@ package ru.wcut.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.wcut.api.entity.MaterialEntity;
-import ru.wcut.api.entity.WorkEntity;
+import ru.wcut.api.exception.ArticleNotFoundException;
+import ru.wcut.api.exception.MaterialNotFoundException;
 import ru.wcut.api.service.MaterialService;
 
 import java.util.List;
@@ -26,6 +28,24 @@ public class MaterialController {
         return materialService.findAllElements();
     }
 
+//    @GetMapping(value = {""})
+//    @ResponseStatus(HttpStatus.OK)
+//    public MaterialEntity getMatCostSize(@RequestParam Long id){
+//            return materialService.getCostSizeMaterial(id);
+//    }
+
+    @GetMapping(value = {""})
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity getOneMaterial(@RequestParam long id){
+        try {
+            return ResponseEntity.ok(materialService.getCostSizeMaterial(id));
+        }catch (MaterialNotFoundException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body("Произщшла ошибка");
+        }
+    }
 
 
 }
