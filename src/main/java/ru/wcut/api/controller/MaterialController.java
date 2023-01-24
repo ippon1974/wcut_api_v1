@@ -34,11 +34,24 @@ public class MaterialController {
 //            return materialService.getCostSizeMaterial(id);
 //    }
 
+//    @GetMapping(value = {""})
+//    @ResponseStatus(HttpStatus.OK)
+//    public ResponseEntity getOneMaterial(@RequestParam long id){
+//        try {
+//            return ResponseEntity.ok(materialService.getMaterialById(id));
+//        }catch (MaterialNotFoundException e){
+//            return ResponseEntity.badRequest().body(e.getMessage());
+//        }
+//        catch (Exception e){
+//            return ResponseEntity.badRequest().body("Произщшла ошибка");
+//        }
+//    }
+
     @GetMapping(value = {""})
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity getOneMaterial(@RequestParam long id){
+    public ResponseEntity getOneMaterialName(@RequestParam String material){
         try {
-            return ResponseEntity.ok(materialService.getCostSizeMaterial(id));
+            return ResponseEntity.ok(materialService.getMaterialByName(material));
         }catch (MaterialNotFoundException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }

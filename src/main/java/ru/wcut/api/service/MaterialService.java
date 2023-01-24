@@ -17,11 +17,19 @@ public class MaterialService {
         return materialRepo.findByAllMaterial();
     }
 
-    public MaterialEntity getCostSizeMaterial(Long id) throws MaterialNotFoundException {
+    public MaterialEntity getMaterialById(Long id) throws MaterialNotFoundException {
         MaterialEntity material = materialRepo.findByMaterialById(id);
         if(material == null){
             throw new MaterialNotFoundException("Материал не найден");
         }
         return materialRepo.findByMaterialById(id);
+    }
+
+    public MaterialEntity getMaterialByName(String material) throws MaterialNotFoundException {
+        MaterialEntity materialName = materialRepo.findMaterialByName(material);
+        if(materialName == null){
+            throw new MaterialNotFoundException("Материал не найден");
+        }
+        return materialRepo.findMaterialByName(material);
     }
 }

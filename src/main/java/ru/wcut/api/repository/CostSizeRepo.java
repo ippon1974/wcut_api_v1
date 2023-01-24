@@ -14,7 +14,7 @@ public interface CostSizeRepo extends JpaRepository<CostSizeEntity, Long> {
     List<CostSizeEntity> getAllCostSize();
 
 //    @Query("select c from CostSizeEntity c where c.material_id = :id and c.size = :size")
-    @Query(value = "SELECT * FROM costsize WHERE costsize.material_id = ? AND costsize.size = ? LIMIT 1;", nativeQuery = true)
+    @Query(value = "SELECT * FROM costsize WHERE costsize.material_id = ? AND costsize.size = ? AND is_published = '1' LIMIT 1;", nativeQuery = true)
     CostSizeEntity findByCostBySize(Long id, int size);
 
 }

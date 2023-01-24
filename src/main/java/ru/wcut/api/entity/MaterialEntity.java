@@ -11,6 +11,8 @@ public class MaterialEntity {
     private long id;
     private String material;
     private String material_en;
+
+    @Column(unique=true)
     private String translit;
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mateiral")

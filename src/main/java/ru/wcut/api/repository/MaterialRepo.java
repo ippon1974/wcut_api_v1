@@ -16,7 +16,8 @@ public interface MaterialRepo extends JpaRepository<MaterialEntity, Long> {
      @Query("select m from MaterialEntity m where m.id = :id")
      MaterialEntity findByMaterialById(Long id);
 
-
+    @Query("select m from MaterialEntity m where m.translit = :material")
+    MaterialEntity findMaterialByName(String material);
 
 
 }
