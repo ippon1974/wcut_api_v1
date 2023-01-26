@@ -20,6 +20,16 @@ public class CostSizeService {
         return costSizeRepo.getAllCostSize();
     }
 
+    public List<CostSizeEntity> getAllCostSizeByMaterialTypeId(int material_id) throws CostSizeNotFoundException {
+        List<CostSizeEntity> costSizeMatId = costSizeRepo.getAllCostSizeByMaterialTypeId(material_id);
+
+        if(costSizeMatId == null){
+            throw new CostSizeNotFoundException("Стоимости и толщины для такого материала нет!");
+        }
+        return costSizeRepo.getAllCostSizeByMaterialTypeId(material_id);
+
+    }
+
     public CostSizeEntity getCostSize(Long id, int size){
         return costSizeRepo.findByCostBySize(id, size);
     }

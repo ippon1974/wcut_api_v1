@@ -24,6 +24,7 @@ public class CostSizeController {
     public CostSizeController(CostSizeService costSizeService) {
         this.costSizeService = costSizeService;
     }
+
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<CostSizeEntity> getAll(){
@@ -36,11 +37,26 @@ public class CostSizeController {
 //        return costSizeService.getCostSize(id, size);
 //    }
 
+
+
     @GetMapping(value = {""})
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getOneCostSize(@RequestParam long id, @RequestParam int size){
         try {
             return ResponseEntity.ok(costSizeService.getCostSizeById(id, size));
+        }catch (CostSizeNotFoundException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body("Произщшла ошибка");
+        }
+    }
+
+    @GetMapping(value = {"/type"})
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity getOneCostSize(@RequestParam int material_id){
+        try {
+            return ResponseEntity.ok(costSizeService.getAllCostSizeByMaterialTypeId(material_id));
         }catch (CostSizeNotFoundException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
