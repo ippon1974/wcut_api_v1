@@ -44,4 +44,9 @@ public class WorkService {
         return Work.toModel(work);
     }
 
+    public List<WorkEntity> getWorkMainPage() {
+        return workRepo.getWorksMainPage();
+    }
+
+
 }

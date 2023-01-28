@@ -72,4 +72,10 @@ public class WorkController {
         }
     }
 
+    @GetMapping("/main")
+    @ResponseStatus(HttpStatus.OK)
+    public List<WorkEntity> getWorkMainPage(){
+        return workService.getWorkMainPage();
+    }
+
 }

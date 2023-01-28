@@ -22,4 +22,10 @@ public interface WorkRepo extends JpaRepository<WorkEntity, Long> {
     @Query(value = "SELECT MIN(id) FROM work", nativeQuery = true)
     int getMinTransactionId();
 
+    @Query(value = "SELECT * FROM work WHERE is_published = '1' ORDER BY id DESC LIMIT 2", nativeQuery = true)
+    public List<WorkEntity> getWorksMainPage();
+
+
+
+
 }
