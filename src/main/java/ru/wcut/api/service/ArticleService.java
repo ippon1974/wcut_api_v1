@@ -46,4 +46,8 @@ public class ArticleService {
         return Article.toModel(article);
     }
 
+    public List<ArticleEntity> getNewsMainPage(){
+        return articleRepo.getNewsMainPage();
+    }
+
 }

@@ -3,6 +3,7 @@ package ru.wcut.api.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import ru.wcut.api.entity.ArticleEntity;
+import ru.wcut.api.entity.MaterialEntity;
 
 import java.util.List;
 
@@ -24,4 +25,7 @@ public interface ArticleRepo extends JpaRepository<ArticleEntity, Long> {
 
     @Query(value = "SELECT * FROM article WHERE title_id = '5' ORDER BY dt DESC", nativeQuery = true)
     public List<ArticleEntity> findAllVideo();
+
+    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 3 ORDER BY id DESC LIMIT 2", nativeQuery = true)
+    public List<ArticleEntity> getNewsMainPage();
 }

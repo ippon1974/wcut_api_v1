@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.wcut.api.entity.ArticleEntity;
+import ru.wcut.api.entity.MaterialEntity;
 import ru.wcut.api.exception.ArticleNotFoundException;
 import ru.wcut.api.service.ArticleService;
 
@@ -68,5 +69,11 @@ public class ArticleController {
         catch (Exception e){
             return ResponseEntity.badRequest().body("Произщшла ошибка");
         }
+    }
+
+    @GetMapping("/main")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getNewsMainPage(){
+        return articleService.getNewsMainPage();
     }
 }

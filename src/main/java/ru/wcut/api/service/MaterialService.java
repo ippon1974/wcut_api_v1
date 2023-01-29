@@ -32,4 +32,8 @@ public class MaterialService {
         }
         return materialRepo.findMaterialByName(material);
     }
+
+    public List<MaterialEntity> getMaterialMainPage() {
+        return materialRepo.getMaterialMainPage();
+    }
 }
