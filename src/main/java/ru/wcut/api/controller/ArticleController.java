@@ -76,4 +76,16 @@ public class ArticleController {
     public List<ArticleEntity> getNewsMainPage(){
         return articleService.getNewsMainPage();
     }
+
+    @GetMapping("/main/item")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getNewsItemMainPage(){
+        return articleService.getNewsItemMainPage();
+    }
+
+    @GetMapping("/main/video")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ArticleEntity> getNewsVideoMainPage(){
+        return articleService.getNewsVideoMainPage();
+    }
 }

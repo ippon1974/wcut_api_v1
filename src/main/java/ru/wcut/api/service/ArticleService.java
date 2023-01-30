@@ -50,4 +50,12 @@ public class ArticleService {
         return articleRepo.getNewsMainPage();
     }
 
+    public List<ArticleEntity> getNewsItemMainPage(){
+        return articleRepo.getNewsItemMainPage();
+    }
+
+    public List<ArticleEntity> getNewsVideoMainPage(){
+        return articleRepo.getNewsVideoMainPage();
+    }
+
 }
