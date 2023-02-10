@@ -29,7 +29,9 @@ public interface ArticleRepo extends JpaRepository<ArticleEntity, Long> {
     @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 1 ORDER BY id ASC LIMIT 2", nativeQuery = true)
     public List<ArticleEntity> getNewsMainPage();
 
-    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 4 ORDER BY id ASC LIMIT 2", nativeQuery = true)
+    public static final String ITEM_MAIN = "SELECT * FROM article";
+//    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 4 ORDER BY id ASC LIMIT 2", nativeQuery = true)
+    @Query(value = ITEM_MAIN, nativeQuery = true)
     public List<ArticleEntity> getNewsItemMainPage();
 
     @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 5 ORDER BY id ASC LIMIT 2", nativeQuery = true)
