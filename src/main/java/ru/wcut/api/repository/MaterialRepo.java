@@ -11,16 +11,16 @@ import java.util.List;
 
 public interface MaterialRepo extends JpaRepository<MaterialEntity, Long> {
 
-    @Query("select m from MaterialEntity m order by m.material asc")
+    @Query("select m from MaterialEntity m  where m.is_published = 1 order by m.material asc")
     List<MaterialEntity> findByAllMaterial();
 
      @Query("select m from MaterialEntity m where m.id = :id")
      MaterialEntity findByMaterialById(Long id);
 
-    @Query("select m from MaterialEntity m where m.translit = :material")
+    @Query("select m from MaterialEntity m where m.is_published = 1 and m.translit = :material")
     MaterialEntity findMaterialByName(String material);
 
-    @Query(value = "SELECT id, material, material_en, translit FROM mateiral ORDER BY id ASC LIMIT 2", nativeQuery = true)
+    @Query(value = "SELECT * FROM mateiral WHERE is_published = 1 ORDER BY id ASC LIMIT 2", nativeQuery = true)
     public List<MaterialEntity> getMaterialMainPage();
 
 
