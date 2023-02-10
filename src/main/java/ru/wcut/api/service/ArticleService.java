@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 import ru.wcut.api.entity.ArticleEntity;
 import ru.wcut.api.exception.ArticleNotFoundException;
 import ru.wcut.api.model.Article;
+import ru.wcut.api.model.ArticleMainPage;
 import ru.wcut.api.repository.ArticleRepo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -52,6 +54,10 @@ public class ArticleService {
 
     public List<ArticleEntity> getNewsItemMainPage(){
         return articleRepo.getNewsItemMainPage();
+    }
+
+    public List<ArticleMainPage> getNewsItemMainPageToModel(){
+
     }
 
     public List<ArticleEntity> getNewsVideoMainPage(){
