@@ -45,17 +45,27 @@ public class ArticleMainPage {
     public void setTitlelong(String titlelong) {
         this.titlelong = titlelong;
     }
-    public static ArticleMainPage toModel(ArticleEntity articleEntity) {
+    public List<ArticleMainPage> toModel(List<ArticleEntity> articleEntity) {
         ArticleMainPage model = new ArticleMainPage();
-        model.setId(articleEntity.getId());
-        model.setTitle_id(articleEntity.getTitle_id());
-        model.setTitlelong(articleEntity.getTitlelong());
-        model.setTitle(articleEntity.getTitle());
-        return model;
+        model.setId(new ArticleEntity().getId());
+        model.setTitle_id(new ArticleEntity().getTitle_id());
+        model.setTitlelong(new ArticleEntity().getTitlelong());
+        model.setTitle(new ArticleEntity().getTitle());
+        List<ArticleMainPage> articleMainPagesList = new ArrayList<>();
+        articleMainPagesList.add(model);
+        return articleMainPagesList;
     }
 
-    public List<ArticleMainPage> toModelList(ArticleEntity articleEntity){
-        ArticleMainPage article;
-        List<ArticleMainPage> list = new ArrayList<>();
+    private static ArticleMainPage toModelNew(ArticleEntity articleEntity){
+        ArticleMainPage articleMainPage = new ArticleMainPage();
+        articleMainPage.setId(articleEntity.getId());
+        articleMainPage.setTitle(articleEntity.getTitle());
+        articleMainPage.setTitle_id(articleEntity.getTitle_id());
+        return  articleMainPage;
     }
+    public List<ArticleMainPage> listing(ArticleEntity articleEntity){
+       List<ArticleMainPage> ar = (List<ArticleMainPage>)toModelNew(articleEntity);
+       return ar;
+    }
+
 }

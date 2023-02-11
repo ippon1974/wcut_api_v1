@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.wcut.api.entity.ArticleEntity;
 import ru.wcut.api.entity.MaterialEntity;
 import ru.wcut.api.exception.ArticleNotFoundException;
+import ru.wcut.api.model.ArticleMainPage;
 import ru.wcut.api.service.ArticleService;
 
 import java.util.List;
@@ -79,8 +80,11 @@ public class ArticleController {
 
     @GetMapping("/main/item")
     @ResponseStatus(HttpStatus.OK)
-    public List<ArticleEntity> getNewsItemMainPage(){
-        return articleService.getNewsItemMainPage();
+//    public List<ArticleEntity> getNewsItemMainPage(){
+//        return articleService.getNewsItemMainPage();
+//    }
+    public List<ArticleMainPage> getNewsItemMainPage(){
+        return articleService.getNewsItemMainPageToModel();
     }
 
     @GetMapping("/main/video")

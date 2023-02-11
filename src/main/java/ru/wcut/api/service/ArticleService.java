@@ -57,6 +57,9 @@ public class ArticleService {
     }
 
     public List<ArticleMainPage> getNewsItemMainPageToModel(){
+        List<ArticleEntity> tb = articleRepo.getNewsItemMainPage();
+        List<ArticleMainPage> mg = new ArrayList<>();
+        mg.add(new ArticleMainPage().listing(tb));
 
     }
 
