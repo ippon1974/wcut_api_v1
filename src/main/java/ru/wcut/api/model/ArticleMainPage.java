@@ -45,6 +45,7 @@ public class ArticleMainPage {
     public void setTitlelong(String titlelong) {
         this.titlelong = titlelong;
     }
+
     public List<ArticleMainPage> toModel(List<ArticleEntity> articleEntity) {
         ArticleMainPage model = new ArticleMainPage();
         model.setId(new ArticleEntity().getId());
@@ -63,9 +64,15 @@ public class ArticleMainPage {
         articleMainPage.setTitle_id(articleEntity.getTitle_id());
         return  articleMainPage;
     }
-    public List<ArticleMainPage> listing(ArticleEntity articleEntity){
-       List<ArticleMainPage> ar = (List<ArticleMainPage>)toModelNew(articleEntity);
-       return ar;
+
+    public static List<ArticleMainPage> test(List<ArticleEntity> articleEntities){
+        List<ArticleEntity> art = articleEntities;
+        List<ArticleMainPage> test = new ArrayList<>();
+
+
+        //model.setTodos(entity.getTodos().stream().map(Todo::toModel).collect(Collectors.toList()));
+        return test;
     }
+
 
 }

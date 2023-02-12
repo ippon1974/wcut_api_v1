@@ -14,8 +14,10 @@ public class ArticleEntity {
     @Column( nullable = true )
     private int title_id;
     private String  titlelong;
+
     @Column(columnDefinition = "TEXT")
     private String body;
+
     @Column(length = 15)
     private String img_1;
     @Column(length = 15)
@@ -33,6 +35,15 @@ public class ArticleEntity {
     private Boolean is_published;
 
     public ArticleEntity() {
+    }
+
+    public ArticleEntity(long id, String title, int title_id, String titlelong, String img_1, Boolean is_published) {
+        this.id = id;
+        this.title = title;
+        this.title_id = title_id;
+        this.titlelong = titlelong;
+        this.img_1 = img_1;
+        this.is_published = is_published;
     }
 
     public long getId() {

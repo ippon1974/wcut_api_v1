@@ -1,6 +1,7 @@
 package ru.wcut.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import ru.wcut.api.entity.ArticleEntity;
 import ru.wcut.api.exception.ArticleNotFoundException;
@@ -49,22 +50,15 @@ public class ArticleService {
     }
 
     public List<ArticleEntity> getNewsMainPage(){
-        return articleRepo.getNewsMainPage();
+        return articleRepo.getNewsMainPage(PageRequest.of(0,2));
     }
 
     public List<ArticleEntity> getNewsItemMainPage(){
-        return articleRepo.getNewsItemMainPage();
-    }
-
-    public List<ArticleMainPage> getNewsItemMainPageToModel(){
-        List<ArticleEntity> tb = articleRepo.getNewsItemMainPage();
-        List<ArticleMainPage> mg = new ArrayList<>();
-        mg.add(new ArticleMainPage().listing(tb));
-
+        return articleRepo.getNewsItemMainPage(PageRequest.of(0,2));
     }
 
     public List<ArticleEntity> getNewsVideoMainPage(){
-        return articleRepo.getNewsVideoMainPage();
+        return articleRepo.getNewsVideoMainPage(PageRequest.of(0,2));
     }
 
 }

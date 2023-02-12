@@ -80,11 +80,8 @@ public class ArticleController {
 
     @GetMapping("/main/item")
     @ResponseStatus(HttpStatus.OK)
-//    public List<ArticleEntity> getNewsItemMainPage(){
-//        return articleService.getNewsItemMainPage();
-//    }
-    public List<ArticleMainPage> getNewsItemMainPage(){
-        return articleService.getNewsItemMainPageToModel();
+    public List<ArticleEntity> getNewsItemMainPage(){
+        return articleService.getNewsItemMainPage();
     }
 
     @GetMapping("/main/video")
