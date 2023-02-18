@@ -10,7 +10,7 @@ import ru.wcut.api.service.WorkService;
 
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:3000", "http://23.105.246.179:3000"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://23.105.246.179:3000", "http://wcut.ru"})
 @RestController
 @RequestMapping("/works")
 public class WorkController {
