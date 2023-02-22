@@ -37,12 +37,14 @@ public class ArticleEntity {
     public ArticleEntity() {
     }
 
-    public ArticleEntity(long id, String title, int title_id, String titlelong, String img_1, Boolean is_published) {
+    public ArticleEntity(long id, String title, int title_id, String titlelong, String img_1, Date dt, Date dt_published, Boolean is_published) {
         this.id = id;
         this.title = title;
         this.title_id = title_id;
         this.titlelong = titlelong;
         this.img_1 = img_1;
+        this.dt = dt;
+        this.dt_published = dt_published;
         this.is_published = is_published;
     }
 

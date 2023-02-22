@@ -27,23 +27,24 @@ public interface ArticleRepo extends JpaRepository<ArticleEntity, Long> {
     @Query(value = "SELECT * FROM article WHERE title_id = '5' ORDER BY dt DESC", nativeQuery = true)
     public List<ArticleEntity> findAllVideo();
 
-//    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 1 ORDER BY id ASC LIMIT 2", nativeQuery = true)
-//    public List<ArticleEntity> getNewsMainPage();
+    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 1 ORDER BY id ASC LIMIT 2", nativeQuery = true)
+    public List<ArticleEntity> getNewsMainPage();
 
-    @Query("select new ArticleEntity(a.id, a.title, a.title_id, a.titlelong, a.img_1, a.is_published) from ArticleEntity a where a.is_published=1 and a.title_id = 1")
-    public List<ArticleEntity> getNewsMainPage(Pageable pageable);
+    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 4 ORDER BY id ASC LIMIT 2", nativeQuery = true)
+    public List<ArticleEntity> getNewsItemMainPage();
 
-//    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 4 ORDER BY id ASC LIMIT 2", nativeQuery = true)
-//    public List<ArticleEntity> getNewsItemMainPage();
+    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 5 ORDER BY id ASC LIMIT 2", nativeQuery = true)
+    public List<ArticleEntity> getNewsVideoMainPage();
 
-//    @Query(value = "SELECT * FROM article WHERE is_published = 1 AND title_id = 5 ORDER BY id ASC LIMIT 2", nativeQuery = true)
-//    public List<ArticleEntity> getNewsVideoMainPage();
 
-    @Query("select new ArticleEntity(a.id, a.title, a.title_id, a.titlelong, a.img_1, a.is_published) from ArticleEntity a where a.is_published=1 and a.title_id = 4")
-    public List<ArticleEntity> getNewsItemMainPage(Pageable pageable);
-
-    @Query("select new ArticleEntity(a.id, a.title, a.title_id, a.titlelong, a.img_1, a.is_published) from ArticleEntity a where a.is_published=1 and a.title_id = 5")
-    public List<ArticleEntity> getNewsVideoMainPage(Pageable pageable);
+//    @Query("select new ArticleEntity(a.id, a.title, a.title_id, a.titlelong, a.img_1, a.dt, a.dt_published, a.is_published) from ArticleEntity a where a.is_published=1 and a.title_id = 1 order by a.id desc")
+//    public List<ArticleEntity> getNewsMainPage(Pageable pageable);
+//
+//    @Query("select new ArticleEntity(a.id, a.title, a.title_id, a.titlelong, a.img_1, a.dt, a.dt_published, a.is_published) from ArticleEntity a where a.is_published=1 and a.title_id = 4")
+//    public List<ArticleEntity> getNewsItemMainPage(Pageable pageable);
+//
+//    @Query("select new ArticleEntity(a.id, a.title, a.title_id, a.titlelong, a.img_1, a.dt, a.dt_published, a.is_published) from ArticleEntity a where a.is_published=1 and a.title_id = 5")
+//    public List<ArticleEntity> getNewsVideoMainPage(Pageable pageable);
 
 
 
