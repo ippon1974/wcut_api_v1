@@ -53,6 +53,15 @@ public class WorkEntity {
     public WorkEntity() {
     }
 
+    public WorkEntity(long id, String title, String titlelong, String img_1, String img_2, Boolean is_published) {
+        this.id = id;
+        this.title = title;
+        this.titlelong = titlelong;
+        this.img_1 = img_1;
+        this.img_2 = img_2;
+        this.is_published = is_published;
+    }
+
     public long getId() {
         return id;
     }

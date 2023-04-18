@@ -1,6 +1,7 @@
 package ru.wcut.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import ru.wcut.api.entity.MaterialEntity;
 import ru.wcut.api.exception.MaterialNotFoundException;
@@ -34,6 +35,7 @@ public class MaterialService {
     }
 
     public List<MaterialEntity> getMaterialMainPage() {
-        return materialRepo.getMaterialMainPage();
+//        return materialRepo.getMaterialMainPage();
+        return materialRepo.getMaterialMainPage(PageRequest.of(0,2));
     }
 }

@@ -39,6 +39,12 @@ public class MaterialEntity {
     public MaterialEntity() {
     }
 
+    public MaterialEntity(long id, String material, Boolean is_published) {
+        this.id = id;
+        this.material = material;
+        this.is_published = is_published;
+    }
+
     public long getId() {
         return id;
     }

@@ -1,6 +1,7 @@
 package ru.wcut.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import ru.wcut.api.entity.WorkEntity;
@@ -45,8 +46,8 @@ public class WorkService {
     }
 
     public List<WorkEntity> getWorkMainPage() {
-        return workRepo.getWorksMainPage();
+//        return workRepo.getWorksMainPage();
+        return workRepo.getWorksMainPage(PageRequest.of(0,2));
     }
-
 
 }

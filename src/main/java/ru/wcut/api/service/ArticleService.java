@@ -50,18 +50,18 @@ public class ArticleService {
     }
 
     public List<ArticleEntity> getNewsMainPage(){
-        return articleRepo.getNewsMainPage();
-//        return articleRepo.getNewsMainPage(PageRequest.of(0,2));
+//        return articleRepo.getNewsMainPage();
+        return articleRepo.getNewsMainPage(PageRequest.of(0,2));
     }
 
     public List<ArticleEntity> getNewsItemMainPage(){
-        return articleRepo.getNewsItemMainPage();
-//        return articleRepo.getNewsItemMainPage(PageRequest.of(0,2));
+//        return articleRepo.getNewsItemMainPage();
+        return articleRepo.getNewsItemMainPage(PageRequest.of(0,2));
     }
 
     public List<ArticleEntity> getNewsVideoMainPage(){
-        return articleRepo.getNewsVideoMainPage();
-//        return articleRepo.getNewsVideoMainPage(PageRequest.of(0,2));
+//        return articleRepo.getNewsVideoMainPage();
+        return articleRepo.getNewsVideoMainPage(PageRequest.of(0,2));
     }
 
 }
